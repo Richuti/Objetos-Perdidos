@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-uam-700 text-white text-sm font-semibold rounded-lg hover:bg-uam-800 active:bg-uam-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-white text-gray-700 text-sm font-semibold rounded-lg border border-gray-300 hover:bg-gray-50 active:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-red-600 text-white text-sm font-semibold rounded-lg hover:bg-red-700 active:bg-red-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+
+  .btn-success {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-emerald-600 text-white text-sm font-semibold rounded-lg hover:bg-emerald-700 active:bg-emerald-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+
+  .input {
+    @apply w-full px-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-uam-500 focus:border-transparent transition-shadow bg-white placeholder-gray-400;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-gray-700 mb-1.5;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
+  }
+
+  .table-th {
+    @apply px-4 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider bg-gray-50;
+  }
+
+  .table-td {
+    @apply px-4 py-3 text-sm text-gray-700;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-gray-900;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-gray-500 mt-0.5;
+  }
+}
