@@ -1,6 +1,6 @@
-import { useEffect, useState, type FormEvent } from 'react'
+﻿import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { objetosService } from '../services/objetosService'
+import { objetosService } from '../servicios'
 import type { ObjetoPerdido } from '../types'
 import Alert from '../components/Alert'
 import Badge from '../components/Badge'

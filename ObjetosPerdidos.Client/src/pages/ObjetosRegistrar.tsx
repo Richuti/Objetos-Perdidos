@@ -1,6 +1,6 @@
-import { useState, type FormEvent } from 'react'
+﻿import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { objetosService } from '../services/objetosService'
+import { objetosService } from '../servicios'
 import Alert from '../components/Alert'
 
 type TipoLugar = 'aula' | 'libre'

@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context'
-import { reportesService } from '../services/reportesService'
+import { reportesService } from '../servicios'
 import type { ReporteGeneral } from '../types'
 
 function StatCard({ label, value, sub, color }: {

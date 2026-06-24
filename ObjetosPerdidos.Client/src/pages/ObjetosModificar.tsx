@@ -1,6 +1,6 @@
-import { useEffect, useState, type FormEvent } from 'react'
+﻿import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { objetosService } from '../services/objetosService'
+import { objetosService } from '../servicios'
 import Alert from '../components/Alert'
 
 export default function ObjetosModificar() {

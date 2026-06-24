@@ -1,6 +1,6 @@
-import { useState, type FormEvent } from 'react'
+﻿import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import { reportesService } from '../services/reportesService'
+import { reportesService } from '../servicios'
 import type { ReporteRango } from '../types'
 import Badge from '../components/Badge'
 import Alert from '../components/Alert'

@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { objetosService } from '../services/objetosService'
+import { objetosService } from '../servicios'
 import { useAuth } from '../context'
 import type { ObjetoPerdido } from '../types'
 import Badge from '../components/Badge'

@@ -1,5 +1,5 @@
-import { useState, type FormEvent } from 'react'
-import { objetosService } from '../services/objetosService'
+﻿import { useState, type FormEvent } from 'react'
+import { objetosService } from '../servicios'
 import type { ObjetoPerdido } from '../types'
 import Badge from '../components/Badge'
 import Alert from '../components/Alert'

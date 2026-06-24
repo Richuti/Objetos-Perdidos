@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { reportesService } from '../services/reportesService'
+import { reportesService } from '../servicios'
 import type { ReporteGeneral as ReporteGeneralType } from '../types'
 import Alert from '../components/Alert'
 

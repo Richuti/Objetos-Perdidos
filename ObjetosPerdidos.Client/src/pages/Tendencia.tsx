@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts'
-import { reportesService } from '../services/reportesService'
+import { reportesService } from '../servicios'
 import type { ReporteTendencia } from '../types'
 import Alert from '../components/Alert'
 

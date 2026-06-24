@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import { reportesService } from '../services/reportesService'
+import { reportesService } from '../servicios'
 import type { ReporteLugar } from '../types'
 import Alert from '../components/Alert'
 
