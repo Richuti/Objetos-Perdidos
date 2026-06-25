@@ -49,7 +49,10 @@ export default function GraficaEstados() {
       {data && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="card">
-            <h2 className="font-semibold text-gray-700 mb-4">Distribución</h2>
+            <div className="mb-4">
+              <h2 className="font-bold text-gray-800 text-lg">Distribución de Estados</h2>
+              <p className="text-sm text-gray-500 mt-0.5">Proporción de objetos entregados y pendientes en el sistema</p>
+            </div>
             <ResponsiveContainer width="100%" height={280}>
               <PieChart>
                 <Pie
@@ -69,7 +72,10 @@ export default function GraficaEstados() {
           </div>
 
           <div className="card space-y-4">
-            <h2 className="font-semibold text-gray-700 mb-4">Resumen</h2>
+            <div className="mb-2">
+              <h2 className="font-bold text-gray-800 text-lg">Resumen de Entregas</h2>
+              <p className="text-sm text-gray-500 mt-0.5">Estadísticas detalladas de entrega al propietario</p>
+            </div>
             <div>
               <div className="flex justify-between text-sm mb-1">
                 <span className="text-green-700 font-medium">Entregados</span>

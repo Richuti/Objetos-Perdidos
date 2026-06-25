@@ -41,6 +41,10 @@ export default function Tendencia() {
 
       {data && (
         <div className="card">
+          <div className="mb-6">
+            <h2 className="font-bold text-gray-800 text-lg">Tendencia de Registros y Entregas</h2>
+            <p className="text-sm text-gray-500 mt-0.5">Evolución diaria de movimientos en el sistema a lo largo del tiempo</p>
+          </div>
           {data.datos.length === 0 ? (
             <p className="text-center text-gray-500 py-8">No hay datos disponibles</p>
           ) : (

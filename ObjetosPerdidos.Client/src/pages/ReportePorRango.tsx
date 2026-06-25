@@ -1,6 +1,7 @@
 ﻿import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { reportesService } from '../servicios'
+import { normalizarFecha } from '../utils'
 import type { ReporteRango } from '../types'
 import Badge from '../components/Badge'
 import Alert from '../components/Alert'
@@ -17,7 +18,7 @@ export default function ReportePorRango() {
     setError('')
     setLoading(true)
     try {
-      const result = await reportesService.getRango(fechaDesde, fechaHasta)
+      const result = await reportesService.getRango(normalizarFecha(fechaDesde), normalizarFecha(fechaHasta))
       setData(result)
     } catch (err: unknown) {
       const msg =

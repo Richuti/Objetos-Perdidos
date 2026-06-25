@@ -39,6 +39,10 @@ export default function GraficaPorLugar() {
 
       {data && (
         <div className="card">
+          <div className="mb-6">
+            <h2 className="font-bold text-gray-800 text-lg">Distribución por Lugar de Hallazgo</h2>
+            <p className="text-sm text-gray-500 mt-0.5">Cantidad de objetos encontrados en cada ubicación del campus</p>
+          </div>
           {data.lugares.length === 0 ? (
             <p className="text-center text-gray-500 py-8">No hay datos disponibles</p>
           ) : (

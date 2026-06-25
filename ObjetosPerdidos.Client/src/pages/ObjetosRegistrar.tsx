@@ -1,6 +1,7 @@
 ﻿import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { objetosService } from '../servicios'
+import { normalizarFecha } from '../utils'
 import Alert from '../components/Alert'
 
 type TipoLugar = 'aula' | 'libre'
@@ -44,7 +45,7 @@ export default function ObjetosRegistrar() {
 
     setLoading(true)
     try {
-      await objetosService.create({ nombre, descripcion, lugar, fechaRegistro: fecha })
+      await objetosService.create({ nombre, descripcion, lugar, fechaRegistro: normalizarFecha(fecha) })
       navigate('/objetos')
     } catch (err: unknown) {
       const msg =

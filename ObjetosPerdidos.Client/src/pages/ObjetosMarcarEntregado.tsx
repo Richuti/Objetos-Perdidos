@@ -1,6 +1,7 @@
 ﻿import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { objetosService } from '../servicios'
+import { normalizarFecha } from '../utils'
 import type { ObjetoPerdido } from '../types'
 import Alert from '../components/Alert'
 import Badge from '../components/Badge'
@@ -27,7 +28,7 @@ export default function ObjetosMarcarEntregado() {
     setError('')
     setSaving(true)
     try {
-      await objetosService.marcarEntregado(Number(id), fechaEntrega)
+      await objetosService.marcarEntregado(Number(id), normalizarFecha(fechaEntrega))
       navigate('/objetos')
     } catch (err: unknown) {
       const msg =

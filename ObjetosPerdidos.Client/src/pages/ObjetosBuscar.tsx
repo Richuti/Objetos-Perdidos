@@ -1,10 +1,17 @@
-﻿import { useState, type FormEvent } from 'react'
+﻿import { useState, useEffect, type FormEvent } from 'react'
 import { objetosService } from '../servicios'
+import { normalizarFecha } from '../utils'
 import type { ObjetoPerdido } from '../types'
 import Badge from '../components/Badge'
 import Alert from '../components/Alert'
 
 type TipoBusqueda = 'nombre' | 'fechaRegistro' | 'fechaEntrega'
+
+const TIPO_NOTAS: Record<TipoBusqueda, string> = {
+  nombre: 'Busca objetos cuyo nombre contenga el texto introducido.',
+  fechaRegistro: 'Muestra objetos que fueron encontrados y registrados en el sistema dentro del rango indicado.',
+  fechaEntrega: 'Muestra objetos que ya fueron entregados a su dueño dentro del rango indicado.',
+}
 
 export default function ObjetosBuscar() {
   const [tipo, setTipo] = useState<TipoBusqueda>('nombre')
@@ -15,12 +22,26 @@ export default function ObjetosBuscar() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
+  // Al cambiar tipo de búsqueda, limpiar campos y resultados anteriores
+  useEffect(() => {
+    setNombre('')
+    setFechaDesde('')
+    setFechaHasta('')
+    setResultados(null)
+    setError('')
+  }, [tipo])
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     setError('')
     setLoading(true)
     try {
-      const data = await objetosService.buscar({ tipo, nombre, fechaDesde, fechaHasta })
+      const data = await objetosService.buscar({
+        tipo,
+        nombre,
+        fechaDesde: normalizarFecha(fechaDesde),
+        fechaHasta: normalizarFecha(fechaHasta),
+      })
       setResultados(data)
     } catch (err: unknown) {
       const msg =
@@ -43,7 +64,7 @@ export default function ObjetosBuscar() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="label">Tipo de búsqueda</label>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-2">
               {(['nombre', 'fechaRegistro', 'fechaEntrega'] as TipoBusqueda[]).map((t) => (
                 <label key={t} className="flex items-center gap-2 cursor-pointer">
                   <input
@@ -59,6 +80,9 @@ export default function ObjetosBuscar() {
                 </label>
               ))}
             </div>
+            <p className="text-xs text-blue-700 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+              ℹ️ {TIPO_NOTAS[tipo]}
+            </p>
           </div>
 
           {tipo === 'nombre' ? (
